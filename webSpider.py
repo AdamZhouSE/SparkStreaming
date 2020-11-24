@@ -8,7 +8,7 @@ from fake_useragent import UserAgent
 import sys
 import os
 # 存储当前页面，支持断点续传
-cur_page = 1600
+cur_page = 0
 
 
 def record_page_no():
