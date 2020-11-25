@@ -26,6 +26,7 @@ def save_data(mongo_url, mongo_db, mongo_col, start_time, end_time, hadoop_url, 
         if len(data) > 0:
             # 分词
             data = textSegmentation.segment(data)
+            print("seg:", data)
             # 将日期作为文件名
             filename = HADOOP_DIR + start_time[0:10] + ".txt"
             # 写入hdfs
