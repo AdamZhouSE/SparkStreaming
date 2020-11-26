@@ -28,7 +28,7 @@ def filter(seg_list):
 
 def segment(content):
     #jieba.enable_paddle()
-    jieba.load_userdict("dic.txt")
+    jieba.load_userdict("dic1.txt")
     seg_list = jieba.cut(content, cut_all=False)
     result=filter(seg_list)
     res = " ".join(result)
