@@ -1,8 +1,6 @@
 """
 使用SparkStreaming做词频统计
-TODO: spark词频统计时是否可以保持原有数据
 TODO: spark是否还有其他应用
-TODO: spark保存文件saveAsTextFiles方法是否可以更改文件名，现在全部是part-00000
 """
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext

@@ -4,7 +4,7 @@
 import pyhdfs
 import pymongo
 import datetime
-import textSegmentation
+import Util.textSegmentation as textSegmentation
 import time
 import sys
 
@@ -79,8 +79,8 @@ def write_to_hdfs(hdfs_path, content):
 
 if __name__ == '__main__':
     try:
-        print("Start to save data.")
+        print("Hdfs: Start to save data.")
         save_data(MONGO_URL, MONGO_DB, MONGO_COL, startTime, endTime, HADOOP_URL, HADOOP_USER)
     except KeyboardInterrupt:
-        print("Stop to save data.")
+        print("Hdfs: Stop to save data.")
         sys.exit(0)
