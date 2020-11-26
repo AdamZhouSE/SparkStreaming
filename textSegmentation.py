@@ -28,11 +28,11 @@ def filter(seg_list):
 
 def segment(content):
     #jieba.enable_paddle()
-    jieba.load_userdict("dic1.txt")
+    jieba.load_userdict("dic.txt")
     seg_list = jieba.cut(content, cut_all=False)
     result=filter(seg_list)
     res = " ".join(result)
     print(res)
     return res
 
-#segment(" 我的家在东北")
+segment(" 爱国守法的爱德基金会")
