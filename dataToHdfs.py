@@ -15,7 +15,7 @@ MONGO_URL = "mongodb://localhost:27017/"
 MONGO_DB = "douban"
 MONGO_COL = "info"
 startTime = "2020-05-10 00:00:00"
-endTime = "2020-10-30 00:00:00"
+endTime = "2020-11-30 00:00:00"
 client = pyhdfs.HdfsClient(hosts=HADOOP_URL, user_name=HADOOP_USER)
 
 

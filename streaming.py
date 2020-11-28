@@ -6,6 +6,7 @@ from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 from pyspark import StorageLevel
 import os
+import platform
 
 
 # 本地python3路径
@@ -34,8 +35,10 @@ def my_streaming(master, app_name, data_dir):
 
 
 if __name__ == "__main__":
+    # 由于Mac预装了python2.7，会和3.7冲突
     # 解决python不同版本冲突的问题
-    os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
+    if platform.platform() == "Darwin-19.6.0-x86_64-i386-64bit":
+        os.environ["PYSPARK_PYTHON"] = PYSPARK_PYTHON
     try:
         print("Start streaming.")
         my_streaming(SPARK_MASTER, APP_NAME, DATA_DIR)
