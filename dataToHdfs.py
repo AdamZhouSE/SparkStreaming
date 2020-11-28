@@ -10,7 +10,7 @@ import sys
 
 HADOOP_URL = "172.20.10.3:9870"
 HADOOP_USER = "root"
-HADOOP_DIR = "/test1/"
+HADOOP_DIR = "/word/"
 MONGO_URL = "mongodb://localhost:27017/"
 MONGO_DB = "douban"
 MONGO_COL = "info"
@@ -46,12 +46,14 @@ def read_from_mongo(mongo_url, mongo_db, mongo_col, start_time):
     mongo_col = mongo_db[mongo_col]
     mongo_query = {"release_time": {"$gte": start_time, "$lt": add_day(start_time)}}
     mongo_doc = mongo_col.find(mongo_query)
-    res = ""
+    word_res = ""
+    time_res = []
     # 这里的x是一个字典,我们仅需要帖子的标题和内容
     for x in mongo_doc:
-        res += str(x["title"])
-        res += str(x["content"])
-    return res
+        word_res += str(x["title"])
+        word_res += str(x["content"])
+        time_res.append(str(x["release_time"]))
+    return word_res
 
 
 # 将日期字符串增加一天

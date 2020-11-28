@@ -1,9 +1,8 @@
+"""
+向Hdfs中写入数据，测试spark的监听效果
+"""
 import pyhdfs
-import pymongo
-import datetime
-import textSegmentation
 import time
-import sys
 
 HADOOP_URL = "172.20.10.3:9870"
 HADOOP_USER = "root"
